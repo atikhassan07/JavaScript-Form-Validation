@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creative Shaper</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+      function getValid(){
+
+        var name = document.getElementById('name');
+        var phone = document.getElementById('phone');
+        var email = document.getElementById('email');
+        var username = document.getElementById('username');
+        var password = document.getElementById('password');
+        var re_pass = document.getElementById('re_pass');
+  
+          if(name.value == ''){
+              document.getElementById('name_error').innerHTML='Please Enter Your Name';
+              name.focus();
+              return false;
+          }else{
+            document.getElementById('name_error').innerHTML='';
+          }
+          // phone 
+          if(phone.value == ''){
+              document.getElementById('phone_error').innerHTML='Please Enter Your Phone Number';
+              phone.focus();
+              return false;
+          }else{
+              document.getElementById('phone_error').innerHTML='';
+          }
+          // email
+          if(email.value == ''){
+              document.getElementById('email_error').innerHTML='Please Enter Your Email';
+              email.focus();
+              return false;
+          }else{
+              document.getElementById('email_error').innerHTML='';
+          }
+          // username
+          if(username.value == ''){
+              document.getElementById('username_error').innerHTML='Please Enter Your UserName';
+              username.focus();
+              return false;
+          }else if(username.value.length<5){
+              document.getElementById('username_error').innerHTML='Please Enter Minimum 5char UserName';
+              username.focus();
+              return false;
+          }else if(username.value.length>10){
+              document.getElementById('username_error').innerHTML='Username Less than 10 characters';
+              username.focus();
+              return false;
+          }else{
+              document.getElementById('username_error').innerHTML='';
+          }
+          // password
+          if(password.value == ''){
+              document.getElementById('p_error').innerHTML='Please Enter Your  Password';
+              password.focus();
+              return false;
+          }else{
+              document.getElementById('p_error').innerHTML='';
+          }
+          // Confirm Password
+          if(re_pass.value == ''){
+              document.getElementById('repass_error').innerHTML='Please Enter Your Confirm Password';
+              re_pass.focus();
+              return false;
+          }else if(re_pass.value!=password.value){
+              document.getElementById('repass_error').innerHTML='Password & Confirm Password is incorrect';
+              re_pass.focus();
+              return false;
+          }else{
+              document.getElementById('repass_error').innerHTML='';
+          }
+     }
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="card custom_card">
+                          <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-12 card_title_part">
+                                    <i class="fab fa-gg-circle"></i>Student Registration
+                                </div> 
+                            </div>
+                          </div>
+                          <div class="card-body card_body">
+                            <form action="">
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label col_form_label">Name<span class="req_star">*</span>:</label>
+                                <div class="col-sm-7">
+                                  <input type="text" class="form-control form_control" id="name">
+                                  <div class="pt-2">
+                                    <span class="" id="name_error" style="color: red; font-weight: bold;"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label col_form_label">Phone:</label>
+                                <div class="col-sm-7">
+                                  <input type="text" class="form-control form_control" id="phone" name="">
+                                  <div class="pt-2">
+                                    <span class="" id="phone_error" style="color: red; font-weight: bold;"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label col_form_label">Email<span class="req_star">*</span>:</label>
+                                <div class="col-sm-7">
+                                  <input type="email" class="form-control form_control" id="email" name="">
+                                  <div class="pt-2">
+                                    <span class="" id="email_error" style="color: red; font-weight: bold;"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label col_form_label">Username<span class="req_star">*</span>:</label>
+                                <div class="col-sm-7">
+                                  <input type="text" class="form-control form_control" id="username" name="">
+                                  <div class="pt-2">
+                                    <span class="" id="username_error" style="color: red; font-weight: bold;"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label col_form_label">Password<span class="req_star">*</span>:</label>
+                                <div class="col-sm-7">
+                                  <input type="password" class="form-control form_control" id="password" name="">
+                                  <div class="pt-2">
+                                    <span class="" id="p_error" style="color: red; font-weight: bold;"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label col_form_label">Confirm-Password<span class="req_star">*</span>:</label>
+                                <div class="col-sm-7">
+                                  <input type="password" class="form-control form_control" id="re_pass" name="">
+                                  <div class="pt-2">
+                                    <span class="" id="repass_error" style="color: red; font-weight: bold;"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label col_form_label">Address:</label>
+                                <div class="col-sm-7">
+                                  <textarea class="form-control form_control" id="" name="" rows="3"></textarea>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-md btn-dark" onclick="return getValid()">REGISTRATION</button>
+                          </div> 
+                        </form> 
+                        </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
